@@ -5,7 +5,8 @@ import Header from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import Ventas from './components/Ventas';
+import Carrito from './components/Carrito';
 
 //SPA
 function App() {
@@ -17,6 +18,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/Home " element={<Home />}/>
+            <Route path="/Ventas" element={<Ventas />}/>
+            <Route path="/Carrito" element={<Carrito />}/>
+
           </Routes>
 
         </div>  
