@@ -1,0 +1,22 @@
+[
+    {
+        "imagen" : "imagen.jpg",
+        "cantidad" : "1",
+        "Producto" : "libro 1",
+        "valor" : "5000",
+        "total" : "5000"     
+
+    },{
+        "imagen" : "imagen.jpg",
+        "cantidad" : "2",
+        "Producto" : "libro 2",
+        "valor" : "20000",
+        "total" : "40000"         
+    },{
+        "imagen" : "imagen.jpg",
+        "cantidad" : "1",
+        "Producto" : "libro 3",
+        "valor" : "15000",
+        "total" : "15000" 
+    }
+]
