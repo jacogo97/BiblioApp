@@ -1,40 +1,65 @@
-import React, { useState } from 'react';
-import DatosVentasJson from "./Ventas.json";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table';
 
-const Ventas = () => {
-    const [datosVenta, setDatosVenta] = useState(DatosVentasJson)
-    return(
-        <div>
-        <Table striped="columns">
-    <thead>
-      <tr>
-        <th>idVentas</th>
-        <th>Fecha</th>
-        <th>Valor</th>
-      </tr>
-    </thead>
-    <tbody>
-    {
-      DatosVentasJson.map(
-        (usuario, index)=>{
-          return(
-            <tr>
-              <td>{index}</td>
-              <td>{usuario.fecha}</td>
-              <td>{usuario.valor}</td>
-            </tr>
-          )
 
-        }
-      )
-    }
-    </tbody>
-    </Table>
-  </div>
 
+import React, { Component } from 'react'
+import axios from 'axios'
+
+export default class Ventas extends Component {
+
+  state = {
+    productos: []
+  }
+
+  async componentDidMount() {
+    this.getProductos();
+  }
+
+  getProductos = async () => {
+    const rest = await axios.get('http://localhost:3000/productos');
+    this.setState({ productos: rest.data });
+  }
+
+  render() {
+    return (
+      <div className='row-center'>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div className='col-md6'>
+          <h1>VENTAS</h1>
+        </div>
+
+        <div className='col-md-6'>
+          <ul className='list-group'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {
+              this.state.productos.map(producto => (
+
+
+                <li
+                  className="list-group-item list-group-item-action"
+                  key={producto.id}
+                >
+                  {producto.nombre},
+                  &nbsp;
+                  $ {producto.precio}
+                  &nbsp;
+                  <button type="button" className="btn btn-outline-success">Cantidad: 1</button>
+                </li>
+
+              )
+
+              )
+
+            }
+          </ul>
+          &nbsp;&nbsp;
+          <div className='col-md6'>
+
+          </div>
+          <button type="button" className="btn btn-warning">TOTAL ARTICULOS VENDIDOS</button>
+        </div>
+      </div>
+      
     )
-};
-
-export default Ventas;
+  }
+}

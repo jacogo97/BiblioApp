@@ -1,103 +1,46 @@
 import React, { Fragment } from 'react'
-
+import { Link } from 'react-router-dom'
 
 
 export const Home = () => {
 
-    
-    
+
+
 
   return (
     <Fragment>
-        
 
-        <h1 id="encabezado_productos">Ultimos Productos</h1>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
-        <section id="productos" className='container mt-5'>
-          <div className='row'>
-            
-            {/*Producto 1 */}
-            <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-              <div className='card p-3 rounded'>
-                <img className='card-img-top mx-auto' src='.libro.jpg' alt='Libro'></img>
-                <div className='card-body d-flex flex-column'>
-                  <h5 id='titulo_producto'><a href='http://localhost:3000'>Descripción 1</a></h5>
-                  <div className='rating mt-auto'>
-                    <div className='rating-outer'>
-                      <div className='rating-inner'></div>
-                    </div>
-                    <span id='No_de_Opiniones'>5 reviews</span>
-                  </div>
-                  <p className='card-text'>$72.000</p><a href='http://localhost:3000' id='view_btn' className='btn btn-block'>
-                    Ver detalle
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/*Producto 2*/}
-
-            <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-              <div className='card p-3 rounded'>
-                <img className='card-img-top mx-auto' src='./images/libro2.jpg' alt='Libro'></img>
-                <div className='card-body d-flex flex-column'>
-                  <h5 id='titulo_producto'><a href='http://localhost:3000'>Descripción 2</a></h5>
-                  <div className='rating mt-auto'>
-                    <div className='rating-outer'>
-                      <div className='rating-inner'></div>
-                    </div>
-                    <span id='No_de_Opiniones'>4 reviews</span>
-                  </div>
-                  <p className='card-text'>$68.000</p><a href='http://localhost:3000' id='view_btn' className='btn btn-block'>
-                    Ver detalle
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/*Producto 3*/}
-
-            <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-              <div className='card p-3 rounded'>
-                <img className='card-img-top mx-auto' src='./images/libro3.jpg' alt='Libro'></img>
-                <div className='card-body d-flex flex-column'>
-                  <h5 id='titulo_producto'><a href='http://localhost:3000'>Descripción 3</a></h5>
-                  <div className='rating mt-auto'>
-                    <div className='rating-outer'>
-                      <div className='rating-inner'></div>
-                    </div>
-                    <span id='No_de_Opiniones'>0 reviews</span>
-                  </div>
-                  <p className='card-text'>$128.000</p><a href='http://localhost:3000' id='view_btn' className='btn btn-block'>
-                    Ver detalle
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/*Producto 4*/}
-
-            <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-              <div className='card p-3 rounded'>
-                <img className='card-img-top mx-auto' src='./images/libro4.jpg' alt='Libro'></img>
-                <div className='card-body d-flex flex-column'>
-                  <h5 id='titulo_producto'><a href='http://localhost:3000'>Descrición 4</a></h5>
-                  <div className='rating mt-auto'>
-                    <div className='rating-outer'>
-                      <div className='rating-inner'></div>
-                    </div>
-                    <span id='No_de_Opiniones'>6 reviews</span>
-                  </div>
-                  <p className='card-text'>$9.000</p><a href='http://localhost:3000' id='view_btn' className='btn btn-block'>
-                    Ver detalle
-                  </a>
-                </div>
-              </div>
-            </div>
-
-
+      <div className="container-fluid row">
+        <div className="card col-6 col-md-3 mt-4 mt-md-0">
+          <img src="https://hotmart.s3.amazonaws.com/product_contents/dd226ada-8df7-439e-8d61-d3f688b9ab49/libros2_2118499843.jpg" class="card-img-top" alt="imagen"></img>
+          <div className="card-body">
+            <p className="card-text">Aquí puede ver la lista de productos.</p>
+            <Link to="/Productos" class="btn btn-success">Productos</Link>
           </div>
-        </section>
+        </div>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <div className="card col-6 col-md-3 mt-4 mt-md-0">
+          <img src="https://hotmart.s3.amazonaws.com/product_contents/dd226ada-8df7-439e-8d61-d3f688b9ab49/libros2_2118499843.jpg" class="card-img-top" alt="imagen"></img>
+          <div className="card-body">
+            <p className="card-text">Aquí puede crear un producto nuevo.</p>
+            <Link to="/crearProducto" class="btn btn-success">Crear Producto</Link>
+          </div>
+        </div>
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <div className="card col-6 col-md-4 mt-4 mt-md-0">
+          <img src="https://hotmart.s3.amazonaws.com/product_contents/dd226ada-8df7-439e-8d61-d3f688b9ab49/libros2_2118499843.jpg" class="card-img-top" alt="imagen"></img>
+          <div className="card-body">
+            <p className="card-text">Aquí puede ver las ultimas ventas realizadas.</p>
+            <Link to="/Ventas" className="btn btn-success">Ventas</Link>
+          </div>
+        </div>
+      </div>
 
     </Fragment>
   )
